@@ -1,9 +1,6 @@
 import { Bytes } from '@tendermint/types';
-import { TextDecoder, TextEncoder } from 'util';
 import Buffer from 'buffer';
-
-const decoder = new TextDecoder;
-const encoder = new TextEncoder;
+import { encode, decode } from '@haribala/text-encoder-utf-8';
 
 /**
  * Decode a string from bytes.
@@ -14,7 +11,7 @@ const encoder = new TextEncoder;
  * @throws  will throw if decoding fails
  */
 export function bytesToString (bytes: Bytes): string {
-    return decoder.decode(bytes);
+    return decode(bytes);
 }
 
 /**
@@ -26,7 +23,7 @@ export function bytesToString (bytes: Bytes): string {
  * @throws  will throw if encoding fails
  */
 export function stringToBytes (string: string): Bytes {
-    return encoder.encode(string);
+    return encode(string);
 }
 
 /**

@@ -1194,6 +1194,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@haribala/text-encoder-utf-8@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@haribala/text-encoder-utf-8/-/text-encoder-utf-8-1.1.1.tgz#792fc93fc8b4dab6b3ce5c453fc1965bf744ef71"
+  integrity sha512-CYi2EcGgAMVQSFpwxK9aMNApeDvNLPjB+pIYkmoQg95iguOH3Dz2chNtMPD/rH6GstrOwQ6TqyuAGQ18Frme/w==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"

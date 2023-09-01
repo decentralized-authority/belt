@@ -1,22 +1,12 @@
 import { Base64String, BinaryString, Bytes } from '@tendermint/types';
+import { Buffer } from 'buffer';
 
-let atob: (base64: Base64String) => BinaryString;
-let btoa: (binary: BinaryString) => Base64String;
-
-if (typeof process !== 'undefined' && process.versions && process.versions.node) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { Buffer } = require('buffer');
-
-    atob = function (base64: Base64String): BinaryString {
-        return Buffer.from(base64, 'base64').toString('binary');
-    };
-    btoa = function (binary: BinaryString): Base64String {
-        return Buffer.from(binary, 'binary').toString('base64');
-    };
-}
-else {
-    ({ atob, btoa } = window);
-}
+const atob: (base64: Base64String) => BinaryString = function (base64: Base64String): BinaryString {
+    return Buffer.from(base64, 'base64').toString('binary');
+};
+const btoa: (binary: BinaryString) => Base64String = function (binary: BinaryString): Base64String {
+    return Buffer.from(binary, 'binary').toString('base64');
+};
 
 /**
  * Decode bytes from Base64.

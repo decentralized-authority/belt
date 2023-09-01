@@ -1,14 +1,6 @@
-import { Bytes, USVString } from '@tendermint/types';
-
-let TextDecoder: { new (): { decode (bytes: Bytes): USVString } };
-let TextEncoder: { new (): { encode (string: USVString): Bytes } };
-
-if (typeof process !== 'undefined' && process.versions && process.versions.node) {
-    ({ TextDecoder, TextEncoder } = require('util'));
-}
-else {
-    ({ TextDecoder, TextEncoder } = window);
-}
+import { Bytes } from '@tendermint/types';
+import { TextDecoder, TextEncoder } from 'util';
+import Buffer from 'buffer';
 
 const decoder = new TextDecoder;
 const encoder = new TextEncoder;
